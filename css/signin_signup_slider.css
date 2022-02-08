@@ -1,0 +1,252 @@
+body
+{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+background-color: #252531;
+}
+
+
+#container
+{
+margin:20px auto;
+width: 650px; 
+height:auto;
+
+padding:0;
+border-radius: 10px;
+position: relative;
+}
+/* the form container class is inside the container class */
+.form-container
+{
+box-sizing: border-box;
+width: 100%;
+height: 375px;
+/* border: 1px solid goldenrod; 
+the border properties were initially set for debugging purpose*/
+
+display: flex;
+justify-content:center;
+align-items: center;
+padding:0;
+transition: all 1s ease-in-out;
+position: relative;
+
+}
+/* the .sign-up-form is inside the form contaniner class */
+.sign-up-form,.sign-in-form{
+box-sizing: border-box;
+font-family: monospace;
+background-image:linear-gradient(to left,#2e9599, #0c3233);
+width:50%;
+height:100%;
+text-align: center;
+
+padding: 10px;
+display: flex;
+flex-direction: column;
+justify-content: space-evenly;
+align-items: center;
+position: absolute;
+transition: transform 1s ease-in-out;
+}
+
+.form-container a
+{text-decoration: none;
+font-weight: bold;
+ color: #f7dc6c;
+}
+
+.input-div input
+{
+background: #eee;
+padding: 10px 12px;
+margin-bottom: 1em;
+border-radius: 5px;
+border: none;
+outline: none;
+}
+.or_use_your_account
+{
+font-size: 90%;
+ color: #f7dc6c;
+font-weight: bold;
+margin-top: 0;
+margin-bottom: 1em;
+}
+.form-container h1
+{
+font-family: monospace; 
+text-transform: capitalize;
+color: #f7dc6c;
+margin-bottom: 0;
+}
+/* the styling for the div is housing 
+the sign-in/sign-up form button */
+.btn-div button
+{
+padding:10px 30px;
+background-color:rgba(238, 238, 238, 0.993) ;
+color: #2e9599; 
+font-size: 14px;
+font-weight: bold;
+border: none; 
+border-radius: 10px;
+margin-top: 1em;
+cursor: pointer;
+letter-spacing: 1px;
+text-transform: uppercase;
+transition: 0.4s ease-in;
+}
+
+.btn-div button:hover
+{
+background: #f3d044;
+color: white;
+border: none;} 
+
+.overlay-wrapper
+{box-sizing: border-box;
+height: 375px;
+}
+.overlay
+{
+ 
+width: 100%;
+height: 100%;
+/* border: 1px solid goldenrod; */
+display: flex;
+justify-content:center;
+align-items: center;
+padding:0;   
+
+}
+.overlay-right{
+background-image:linear-gradient(to bottom, #206a6d, rgba(240, 174, 7, 0.767));
+}
+.overlay-left 
+{background-image:linear-gradient(to top, #206a6d, rgba(240, 174, 7, 0.767));
+}
+
+
+.overlay h1{ 
+color: white;
+text-transform: capitalize;}
+/* the to css selctors would have to 
+share the same  properties and values*/
+.overlay-left, .overlay-right
+{box-sizing: border-box;
+width:50%;
+height: 100%;
+text-align: center;
+transition: transform 1s ease-in-out;
+padding: 10px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center; 
+}
+
+.overlay p
+{color: white;
+font-size: 115%;
+font-family: monospace;
+font-weight: bold;
+line-height: 20px;   
+}
+.overlay-left button
+{
+    margin-top: 3em;
+}
+.overlay .ghost
+{
+padding:10px 30px;
+background: #2e9599;
+color:white;
+font-size: 14px;
+font-weight: bold;
+border: none; 
+border-radius: 10px;
+cursor: pointer; 
+text-transform: uppercase; 
+transition: 0.5s ease-in;
+}
+
+.ghost:hover{
+background-color:white ;
+color: #2e9599;;
+border: none;}
+
+
+ .sign-in-form{
+transition: transform 1s ease-in-out;
+top: 0;
+left: 0;
+z-index: 1;}
+
+.sign-up-form
+{
+ top:0; 
+ left: 0;
+ transform: translateX(0);
+ transition: transform 1s ease-in-out; 
+ /* z-index & opacity set to zero  so that 
+ it stays under the sign in form at the left
+  hand side*/
+opacity:0 ;
+
+}
+/* the overlay wrapper is set to 
+absolute in display so that it can move up 
+to over-lap the sgn in, sign-up form */
+.overlay-wrapper
+{
+position: absolute;
+top: 0;
+ right: 0; 
+     
+}
+/* the overlay left is hidden at the 
+right hand side of the screen */
+ .overlay-left
+{   opacity: 0;
+    transform: translateX(-20%); 
+    /* the -20% translate is just to make it
+     a bit dynamic when it move from the left
+      to right*/
+    ;
+ } 
+
+
+/* when the javascript is triggerd, a class 
+is added to the container. any other class
+ in-front of this, makes it applies the
+  effect */
+ .right_overlay_active .overlay-right
+{
+    transform: translateX(-100%);
+} 
+/* the sign in form moves to the right
+ but hides under the sign up form */
+.right_overlay_active .sign-in-form
+{
+    transform: translateX(100%); 
+}
+/* the sign up form moves 
+to the right and stays on top */
+.right_overlay_active .sign-up-form
+{
+    transform: translateX(100%); 
+    z-index: 5;
+    opacity: 1;
+} 
+/* the overlay left moves to a zero
+ position since that it where it is
+  supposed to belong */
+.right_overlay_active .overlay-left
+{ 
+ transform: translateX(0); 
+ opacity: 1;
+ z-index: 2;
+}
