@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="stylesheet" href="">
+    <title>Quiz web App</title>
+    <style>
+      
+    
+        body{ background-color: #1C1C26;
+            margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Open Sans', sans-serif;}
+        #wrapper{max-width: 100%;
+                height:auto;
+                background-color: #252531;
+                background-image: linear-gradient(to bottom,#252531, #70156a );
+                border-radius: 10px;
+                box-sizing: border-box;
+              
+            }
+
+
+        .heading{ padding: 10px 2.1em; 
+                border-bottom: 1px solid rgba(105, 102, 102, 0.219); 
+                max-width: 100%;
+                margin: 0 auto;
+                border-top: none;
+               
+                
+            }
+       
+        .heading p span{background-color: rgba(255, 196, 0, 0.919);
+             padding: 2px 7px;
+            margin-right: 5px;
+            font-size: 100%;
+            margin-top:10px;
+            margin-left: 5px;
+             border-radius: 20px;
+            max-width: 190px;
+            color: rgb(254, 253, 255);
+            display: inline-block;}
+
+           
+        
+  .form-check label {font-size: 90%;  color: rgba(245, 245, 245, 0.856);
+            }
+  .form-check input{margin: 0; cursor: pointer;}
+.heading p, .secondheading p{
+                        text-align: left; 
+                        color: rgba(220, 219, 210, 0.836);
+                        font-family: 'Dongle', sans-serif;
+                        
+                    }
+
+  .quiz-form  p{font-size: 80%;}
+
+         
+                   
+            
+              
+
+
+        .submit-parent-div{border:none;}
+
+       
+    
+    
+        .button-div{  display: flex !important;
+                    align-self: center !important;
+                    
+                    margin-top: 1em;
+                    justify-content: center;
+                    border-bottom:1px solid rgba(105, 102, 102, 0.219); }
+        .heading h5{text-transform: capitalize;}
+ 
+         .socials{padding-bottom:0;
+                    margin-bottom: 0;
+                    margin-top: 0;
+                   }
+        .socials img{ margin-right: 5px;
+                    cursor: pointer;}
+        
+              .btn{padding: 10px 0;
+                    cursor: pointer;
+                    border: none;
+                    border-radius: 5px;
+                    width: 200px;
+                    text-transform: uppercase; 
+                     color: rgba(255, 255, 255, 0.85);
+                     letter-spacing: 1px;
+                    font-size: 90%;
+                    font-weight: bold;
+                    background-color:rgba(255, 196, 0, 0.919);
+                    border: none;
+                  }
+
+            .disclaimer{font-size: 70%;}
+        
+   
+
+        .links  {list-style-type: none; 
+                margin-left: 0; 
+                padding:0; }
+                
+        .links  li {text-align: left;
+                    display: inline-block;}
+        .links a {  color: rgb(172, 169, 169);
+                   text-decoration: none;
+                    text-transform: capitalize;
+                    font-size: small;
+                    margin-right: 5px;}
+
+    .header-title{display: flex;
+                    margin:0 -2em;  
+                    justify-content: center;
+                    align-items: center;
+                    height: 150px;
+                   
+                }
+
+            .title {background-color:white;
+              }
+            .title h1{  color: rgba(78, 3, 75, 0.878) !important;
+                        font-size: 300% !important;
+                        letter-spacing: 5px;}
+                .heading h5{color: white;}
+              .result{background-color: rgba(255, 196, 0, 0.919); }
+      
+                .score{  color: white;
+                            display:inline-block;
+                            font-size: 140%;
+                            text-align:center;
+                             padding: 0 2px;
+                             margin: 0 5px;
+                             width: 120px;
+                           
+                             border-radius: 5px;
+
+                            }
+                    @media screen and (max-width: 700px){
+                      .result h1{font-size: 150%;} 
+                      .score{width:50px; margin:0; 
+                        font-size: 100%;} 
+                        #time{
+                           top:110px !important;
+                           max-width: 120px;
+                            height: 35px !important;
+                            
+                        }
+                        
+                    }
+        .on-with-the{font-style: italic;
+                    text-align: center;
+                    font-weight: normal;}
+        .on-with-the,   .title h2{ color:white; 
+                  position: relative;
+                   font-size: 200%;
+                   font-family: 'Roboto', sans-serif;}
+        .header-title { color: white; }
+        .d-none{display: none;}
+
+        #time{position: absolute; 
+            top: 40px;
+            right: 10px;
+            background-image:linear-gradient(to right, #920389, rgba(255, 196, 0, 0.919));
+            padding: 0 5px;
+            border-radius: 5px;
+            max-width: 120px;
+            height: 40px;
+            display: flex;
+             justify-content: center;
+             align-items: center;
+            }
+        #time span{padding: 2px 5px;
+           color:white;
+           font-weight: bold;
+            font-size: 100%;
+            margin:0 auto;
+            max-width: auto;
+            border-radius:0;
+           background: none;
+            }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+       
+        <div class="heading">
+            <div class="title header-title">
+              
+                <h1>
+                    vincent Quiz
+                </h1>
+                      
+              <div id="time">
+                  <p>
+                      <span id="min">min</span>
+                       <span>:</span> 
+                       <span id="sec">sec</span> 
+                  
+                   </p>
+              </div>     
+          
+            </div>
+
+            <div class="result d-none header-title">
+                <h1>
+                    Your Score is <span class="score ">100</span> Correct.
+                </h1>
+            </div>
+
+        </div>
+        
+        <div class=" heading">
+              <h2 class="on-with-the">
+                On with the questions...
+               </h2> 
+           
+        </div>
+        <div>
+
+            <form class="quiz-form text-light">
+        <div class="heading ">
+
+              
+                    <p class="">
+                        1.) who is your <span class="badge  "> favorite Artist</span>
+                        currently ? 
+                    </p>
+                    <div class="form-check">
+                        <input type="radio" name="q1" value="A" >
+                        <label class="form-check-label">
+                           Brymo Olorofo 
+                        </label>
+                        </div>
+                    <div class="form-check">
+                        
+                        <input type="radio" name="q1" value="B" >
+                        <label class="form-check-label">
+                        Burna-Boy 
+                        </label>
+                    </div>
+    
+                
+            
+
+            </div>
+
+            <div class="heading">
+                <div class="">
+                    <p class="font-weight-normal">
+                        2.) according to a claim, who wrote the song <span class="badge"> Aye</span> for davido?
+                    </p>
+                        <div class="form-check">
+                            <input type="radio" name="q2" value="A">
+                            <label class="form-check-label">
+                            Runtown 
+                            </label> 
+                            <div class="form-check">
+                                <input type="radio" name="q2" value="B">
+                                <label class="form-check-label">
+                                    Tee Spice
+                                </label> 
+                            </div>
+                            
+                     
+                            </label>
+
+                        </div>
+    
+                </div>
+             </div>
+            <div class="heading">
+                <div class="my-5">
+                    <p class="lead font-weight-normal">
+                        3.) Which of these is a popular Nigerian<span class="badge">Tech Influencer</span>on twitter ?
+                    </p>
+                    <div class="form-check">
+                        <input type="radio" name="q3" value="A">
+                        <label class="form-check-label">
+                        Agba Akin 
+                        </label>
+                    </div>
+    
+                        <div class="form-check 
+">
+                            <input type="radio" name="q3" value="B">
+                            <label class="form-check-label">Alex_Houseof308
+                            </label>
+                        </div>
+             
+                 </div>
+             </div>
+            <div class="heading">
+                <div class="my-5">
+                    <p class="lead font-weight-normal">
+                        4.) The<span class="badge">most</span>streamed female artiste in Nigeria according to spotify is who? 
+                    </p>
+                    <div class="form-check my-2 text-white-50">
+                        <input type="radio" name="q4" value="A">
+                        <label class="form-check-label">
+                        Tems 
+                        </label>
+                    </div>
+
+                        <div class="form-check 
+                            my-2 text-white-50">
+                            <input type="radio" name="q4" value="B">
+                            <label class="form-check-label">
+                                Yemi Alade
+                            </label>
+                        </div>
+
+                    </div>
+             </div>
+
+            <div class="heading">
+                
+                <div class="my-5">
+                    <p class="lead font-weight-normal">
+                        5.) Arrange in an orderly manner <br> <span class="badge bg-warning px-1 text-success">(i) HTML-CSS-Javascript</span>
+               
+
+                        <span class="">(ii) Python-PHP-React</span>
+                 
+                        <span class=""> (iii) Bootstrap-Javascript-CSS</span>
+                        
+                    </p>
+                    <div class="form-check ">
+                        <input type="radio" name="q5" value="A">
+                        <label class="form-check-label">
+                           I
+                        </label>
+                    </div>
+    
+                        <div class="form-check">
+                            <input type="radio" name="q5" value="B">
+                            <label class="form-check-label">
+                               II
+                            </label>
+                        </div>
+                </div>
+             </div>
+            <div class="heading submit-parent-div button-div">
+                
+                    <input type="submit" class="btn" value="complete" onfocus="this.style.backgroundColor='green';" onblur="this.style.backgroundColor='rgba(255, 196, 0, 0.919);'">
+
+                    
+             </div>
+                    
+
+              
+        </div>
+        </form>
+
+        <div class=" heading" >
+            <h5>reach out</h5>
+
+           <div class="socials">
+               <a href="https://www.facebook.com/iamvincentnam" target="_blank"><img src="../images/icons8-facebook-24.png" width="26px" alt=""></a>
+               
+               <a href="https://www.twitter.com/iamvincentnam" target="_blank"><img src="../images/icons8-twitter-24 (1).png" alt="">
+            </a>
+              
+              
+               <img src="../images/icons8-email-23.png" alt="">
+           </div>
+           
+        </div>
+
+
+         
+        <div class=" heading" >
+
+            <h5> Disclaimer </h5>
+ 
+            <p class="disclaimer">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse velit eius error ullam maxime aspernatur quidem voluptatibus nisi corporis consectetur. Tempora aspernatur dicta magni architecto. Vero itaque iusto quibusdam blanditiis minus? Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, tempore?</p>
+ 
+             <div >
+                 <ul class="links">
+                     <li>
+                         <a href="#"> terms </a>
+                     </li>
+                     <li>
+                         <a href="#"> privacy </a>
+                     </li>
+                     <li>
+                         <a href="#"> disclaimerv</a>
+                     </li>
+                     <li>
+                         <a href="../html/Dellas_form.html" target="_blank"> contact Us </a>
+                     </li>
+                 </ul>
+             </div>
+         </div>
+
+    </div>
+
+      
+      
+
+       
+    
+    
+
+ <script>
+        alert('You are about to take a test!! are you ready?');
+           const form  = document.querySelector('form');
+
+const displayscore = document.querySelector('.score');
+
+
+var submitQuestion = form.addEventListener('submit', (e)=>{
+        /* Answers is an array of the  value of what the student chose while answering the questions*/
+        const answers =[form.q1.value, form.q2.value, form.q3.value, form.q4.value, form.q5.value];
+        /* correctanswers is an array of the actual correct answers */
+        const correctAnswers =['A','A','A', 'A', 'A'];
+        e.preventDefault();
+
+         // check answers
+        let score =0;
+        for(i=0; i<correctAnswers.length; i++){
+            if(correctAnswers[i] === answers[i] ){
+                score+=20;
+                
+            }
+            else{score}
+        }
+        
+        // show result on page
+       scrollTo(0,0);
+        result = document.querySelector('.result');
+        result.classList.remove('d-none');
+        let output =0;
+        /* To make a dynamic animation of the result on the page */
+        var timer = setInterval(()=>{
+
+            /*condition for timeout interval*/
+            if(output == score){
+              
+                clearInterval(timer)
+            }
+           else{output++}
+           displayscore.textContent =`${output}%`;
+           weatherfunc (output)
+          
+    
+        },50);
+          
+      
+    }); 
+    
+    
+     
+    
+    let sec =60;
+    let min = 5;
+    /*
+    1)Remember not to put the initial declaration of the vriable sec and min inside the setinterval function otherwise, it won't read.
+    2) declare it above the function */
+
+
+    var timing = setInterval(submitQuestion =>{
+        
+        var seconds = document.querySelector('#sec');
+        var minute = document.querySelector('#min');
+        seconds.textContent = `${sec}`;
+        minute.textContent=`${min}`;
+        if(seconds.textContent.length <2){ seconds.textContent = `0${sec}`;}
+        if(minute.textContent.length <2){ minute.textContent = `0${min}`;}
+            if(sec == 0){
+                min -=1;
+                sec = 60;
+                }
+                sec--;
+               
+                if(min == 0){
+                    
+                    clearInterval(timing)
+                    submitQuestion
+                      
+                    } 
+            
+            console.log(sec , min)
+    },50);
+
+
+
+function weatherfunc (output){
+
+   
+   if(output > 0 && output < 40){
+       displayscore.style.color ='rgba(202, 61, 5, 0.781)';
+       displayscore.style.background ='white';
+   } 
+   else if(output => 40 && output < 80){
+ 
+    displayscore.style.color ='orange';
+    displayscore.style.background ='white';
+   }
+ if(output > 80 ){
+    displayscore.style.color ='green';
+    displayscore.style.background ='white';
+   }
+  
+}
+    </script>
+</body>
+</html>
