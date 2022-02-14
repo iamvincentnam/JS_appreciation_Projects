@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../javascript/index.js">
+    <title>Document</title>
+    <style>
+        article{ width: 540px;
+            margin:auto;
+            height: 600px;
+            box-sizing: border-box;
+        background: rgba(8, 95, 81, 0.61);
+        padding: 10px;}
+
+ .image_viewr
+        {
+box-sizing: border-box;
+width:100%; 
+height:60%;
+background: #055;
+ border-radius: 10px;
+border:2px double rgba(28, 206, 132, 0.63)}
+        
+.image_viewr img
+{width: 100%; 
+    height: 100%;}
+.preview
+{width: 100%; 
+box-sizing: border-box;
+height:auto; 
+border: 4px outset rgba(255, 238, 0, 0.74);
+background: silver;
+ border-radius: 5px; 
+ display: grid;
+ grid-template-columns: repeat(4,1fr);
+ grid-auto-rows:100px;
+ cursor: pointer;
+ grid-gap: 5px;
+
+
+}
+
+ .image_viewr img
+ {
+
+/* opacity: 0; */
+transition:  2s ease-in;
+}   
+
+.imgs img
+{width: 100%;
+height: 100%;
+
+}
+ 
+ 
+
+
+    </style>
+</head>
+<body>
+    <article>
+        <div class="image_viewr">
+            <img src="../images/124090112_189247622762060_6077397028390826859_o.jpg" alt="">
+        </div>
+    
+        <div class="preview">
+            
+                
+                <div class="imgs">
+                    <img src="../images/zieGPMS.jpg" alt="">
+                </div>
+                <div class="imgs">
+                    <img src="../images/chessproject.jpg" alt="">
+                </div>
+                <div class="imgs">
+                    <img src="../images/uwp160362.jpeg" alt="">
+                </div>
+                <div class="imgs">
+                    <img src="../images/aeriel_landscape_photo 2.png" alt="">
+                </div>
+                <div class="imgs">
+                    <img src="../images/aerierl- real estate - Copy.jpg" alt="" width="200px">
+                </div>
+                <div class="imgs">
+                    <img src="../images/IMG-1470.JPG" alt="">
+                </div>
+    
+                <div class="imgs">
+                    <img src="../images/lake_in a rainbow.jfif" alt="">
+                </div>
+    
+                <div class="imgs">
+                    <img src="../images/my_todo_list.png.jpg" alt="hello world">
+                </div>
+    
+
+            
+          
+           
+           
+            
+
+        </div>
+    </article>
+   <script>
+      
+      
+var preview_image = document.querySelector('.image_viewr > img');
+var thumbnails = document.querySelectorAll('.imgs > img');
+
+
+thumbnails.forEach((eachimage)=>{
+    eachimage.addEventListener('click', e =>{ 
+    
+    
+    
+            var image_viewer = document.querySelector('.image_viewr > img');
+            var image_src = eachimage.getAttribute('src') ;
+            preview_image.setAttribute('src', image_src);
+               
+               eachimage.classList.add('animation')
+        
+         });
+    
+})
+
+
+
+
+
+   </script>
+</body>
+</html>
