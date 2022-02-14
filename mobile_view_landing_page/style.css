@@ -1,0 +1,109 @@
+body{ background-color: #1C1C26;}
+        #wrapper{
+                width: 390px;
+                max-width: 100%;
+                height:auto;
+                background-color: #252531;
+                border-radius: 10px;
+                margin: 20px auto;
+                color:white; 
+            }
+
+
+        .heading{ padding: 10px 2.1em; 
+                border-bottom: 1px solid rgba(105, 102, 102, 0.671); 
+                max-width: 100%;
+                margin: 0 auto;
+                
+            }
+        h1{        color:white; 
+                   line-height: 40px;
+                   font-size: 240%;
+                   font-family: 'Roboto', sans-serif;;}
+        .heading span{background-color: rgb(170, 88, 236)}
+
+
+          .heading p, .secondheading p{font-size: 70%; 
+                        line-height: 130%;
+                        text-align: left; 
+                        color: rgb(172, 169, 169);
+                        font-family: 'Dongle', sans-serif;
+                        
+                    }
+
+            .secondheading { padding-bottom:2em ; 
+                        padding-top: 0;} 
+            .animation{ max-width: 100%;
+                         background-color: white;
+                         height: 120px;
+                         padding: 10px 30px; 
+                        display: flex; 
+                        justify-content:space-evenly; 
+                        align-items: center;
+                       
+                }
+
+      
+            .animation .thirdimg{ transform: rotateZ(90deg);}
+
+
+            .pricing ul {line-height: 100%; 
+                        padding:0; 
+                        list-style-type: none;
+                   
+           }
+            .pricing li{margin-bottom: 1em;
+                    color: rgb(172, 169, 169);  
+                    font-size: 75%;
+                    display: flex;
+                    justify-content:start;
+                    align-items: center;
+                }
+
+                .pricing li img{margin-right: 5px;}
+
+
+            h5{text-transform:uppercase; 
+                font-size:xx-small;
+                font-family: 'Dongle', sans-serif;
+                letter-spacing: 1px;}
+            input{background-color:#1C1C26;
+                 padding:5px 10px;
+                  width: 90%;
+                  border: none;
+                  border-radius: 3px;
+                }
+                ::placeholder{font-size: 80%;}
+
+         .button-div{display: grid;
+                     align-self: center;
+                    
+                    }
+        .button-div button{padding: 10px 0;
+                         background-color: rgb(170, 88, 236);
+                        border: none;
+                    border-radius: 5px;
+                    color: white;
+                    text-transform: uppercase; 
+                    font-size: 50%;
+                     font-weight:400;
+                    letter-spacing: 1px;}
+        .mailchimp p {font-size:8px;
+                    font-weight: bold;
+                    margin-top: 20px;}
+        .socials{
+            display: flex;
+             padding-bottom: 20px;}
+        .socials img{ margin-right: 5px;}
+
+        .links  {list-style-type: none; 
+                margin-left: 0; 
+                padding:0; }
+                
+        .links  li {text-align: left;
+                    display: inline-block;}
+        .links a {  color: rgb(172, 169, 169);
+                   
+                    text-transform: capitalize;
+                    font-size: small;
+                    margin-right: 5px;}
