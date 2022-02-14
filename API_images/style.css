@@ -1,0 +1,38 @@
+body{text-transform: capitalize; 
+    background: rgba(232, 232, 238, 0.9);
+    }
+    #btn_wrapper { width:100%;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+               
+                 }
+    .btn{background-color: #055; 
+        color: rgb(250, 214, 12); border:none;
+        display: block;
+        width: 100%;
+        border-radius: 10px;
+        padding: 5px 0;
+        cursor: pointer;
+       transition:0.4s;
+       }
+       .btn:focus{outline: none; 
+        background-color:rgba(0, 85, 85, 0.801);
+        transform: scale(0.9);}
+
+
+article{font-weight: bold; 
+        font-family:  Helvetica, sans-serif;
+        width:300px;
+       border:2px dashed rgb(99, 16, 124);
+       padding:5px;
+       margin:50px auto;
+       height:auto;}
+       
+    article img{max-width:100%;}
+
+    .image{width: 100%;
+            background-color: rgb(165, 59, 165);
+       max-height:100%;
+      margin-bottom: 5px;
+      display: block;}
