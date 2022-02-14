@@ -1,0 +1,175 @@
+body{ background-color: #1C1C26;
+    margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Open Sans', sans-serif;}
+#wrapper{max-width: 100%;
+        height:auto;
+        background-color: #252531;
+        background-image: linear-gradient(to bottom,#252531, #70156a );
+        border-radius: 10px;
+        box-sizing: border-box;
+      
+    }
+
+
+.heading{ padding: 10px 2.1em; 
+        border-bottom: 1px solid rgba(105, 102, 102, 0.219); 
+        max-width: 100%;
+        margin: 0 auto;
+        border-top: none;
+       
+        
+    }
+
+.heading p span{background-color: rgba(255, 196, 0, 0.919);
+     padding: 2px 7px;
+    margin-right: 5px;
+    font-size: 100%;
+    margin-top:10px;
+    margin-left: 5px;
+     border-radius: 20px;
+    max-width: 190px;
+    color: rgb(254, 253, 255);
+    display: inline-block;}
+
+   
+
+.form-check label {font-size: 90%;  color: rgba(245, 245, 245, 0.856);
+    }
+.form-check input{margin: 0; cursor: pointer;}
+.heading p, .secondheading p{
+                text-align: left; 
+                color: rgba(220, 219, 210, 0.836);
+                font-family: 'Dongle', sans-serif;
+                
+            }
+
+.quiz-form  p{font-size: 80%;}
+
+ 
+           
+    
+      
+
+
+.submit-parent-div{border:none;}
+
+
+
+
+.button-div{  display: flex !important;
+            align-self: center !important;
+            
+            margin-top: 1em;
+            justify-content: center;
+            border-bottom:1px solid rgba(105, 102, 102, 0.219); }
+.heading h5{text-transform: capitalize;}
+
+ .socials{padding-bottom:0;
+            margin-bottom: 0;
+            margin-top: 0;
+           }
+.socials img{ margin-right: 5px;
+            cursor: pointer;}
+
+      .btn{padding: 10px 0;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            width: 200px;
+            text-transform: uppercase; 
+             color: rgba(255, 255, 255, 0.85);
+             letter-spacing: 1px;
+            font-size: 90%;
+            font-weight: bold;
+            background-color:rgba(255, 196, 0, 0.919);
+            border: none;
+          }
+
+    .disclaimer{font-size: 70%;}
+
+
+
+.links  {list-style-type: none; 
+        margin-left: 0; 
+        padding:0; }
+        
+.links  li {text-align: left;
+            display: inline-block;}
+.links a {  color: rgb(172, 169, 169);
+           text-decoration: none;
+            text-transform: capitalize;
+            font-size: small;
+            margin-right: 5px;}
+
+.header-title{display: flex;
+            margin:0 -2em;  
+            justify-content: center;
+            align-items: center;
+            height: 150px;
+           
+        }
+
+    .title {background-color:white;
+      }
+    .title h1{  color: rgba(78, 3, 75, 0.878) !important;
+                font-size: 300% !important;
+                letter-spacing: 5px;}
+        .heading h5{color: white;}
+      .result{background-color: rgba(255, 196, 0, 0.919); }
+
+        .score{  color: white;
+                    display:inline-block;
+                    font-size: 140%;
+                    text-align:center;
+                     padding: 0 2px;
+                     margin: 0 5px;
+                     width: 120px;
+                   
+                     border-radius: 5px;
+
+                    }
+            @media screen and (max-width: 700px){
+              .result h1{font-size: 150%;} 
+              .score{width:50px; margin:0; 
+                font-size: 100%;} 
+                #time{
+                   top:110px !important;
+                   max-width: 120px;
+                    height: 35px !important;
+                    
+                }
+                
+            }
+.on-with-the{font-style: italic;
+            text-align: center;
+            font-weight: normal;}
+.on-with-the,   .title h2{ color:white; 
+          position: relative;
+           font-size: 200%;
+           font-family: 'Roboto', sans-serif;}
+.header-title { color: white; }
+.d-none{display: none;}
+
+#time{position: absolute; 
+    top: 40px;
+    right: 10px;
+    background-image:linear-gradient(to right, #920389, rgba(255, 196, 0, 0.919));
+    padding: 0 5px;
+    border-radius: 5px;
+    max-width: 120px;
+    height: 40px;
+    display: flex;
+     justify-content: center;
+     align-items: center;
+    }
+#time span{padding: 2px 5px;
+   color:white;
+   font-weight: bold;
+    font-size: 100%;
+    margin:0 auto;
+    max-width: auto;
+    border-radius:0;
+   background: none;
+    }
