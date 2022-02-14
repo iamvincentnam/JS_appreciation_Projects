@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../javascript/oop.js">
+    <title>Document</title>
+    <style>
+
+     
+  /* Table */
+
+  table{margin: 30px auto; width: 70%; 
+      height:230px;border-radius:10px ;}
+  td{text-align: center;}
+  tr{border:1px solid rgb(255, 238, 2);}
+  caption{font-family:'Times New Roman', Times, serif;
+    font-size: 3em;
+    color:white; background-color: rgba(63, 63, 63, 0.74);}
+    /* to set the background properties of each theading along th tr*/
+    th:nth-of-type(2){background-color:orange ; color:papayawhip}
+    th:nth-of-type(3){background-color:rgb(11, 192, 65) ; color:papayawhip;}
+    th:nth-of-type(4){background-color:rgb(41, 12, 173) ;color:papayawhip;}
+    /* To set the background and color of the td along each columns*/
+    td{color: rgb(255, 255, 0);}
+    td:nth-of-type(1){background-color: rgba(255, 166, 0, 0.678);}
+    td:nth-of-type(2){background-color: rgba(11, 192, 65, 0.719);}
+    td:nth-of-type(3){background-color: rgba(43, 9, 194, 0.705);}
+/* to make the first column entirely borderless*/
+    th{border:none;}
+   #buttons{ margin:10px 10%;
+  }
+    </style>
+<body>
+  <table border="1">
+    <caption>Hosting Plans</caption>
+    <tr>
+
+      <th>Name of plan</th>
+      <th class="basic">Basic</th>
+      <th class="professional">Professional</th>
+      <th  class="ultimate">Ultimate</th>
+    </tr>
+    
+    <tr>
+      <th>Monthly</th>
+      <td>$3.99</td>
+      <td>$5.99</td>
+      <td>$9.99</td>
+    </tr>
+      <tr>
+        <th>Disk Space</th>
+        <td>100 GB</td>
+        <td>500 GB</td>
+        <td>2000 GB</td>
+
+      </tr>
+      <tr>
+        <th>Data Transfer</th>
+        <td>1000 GB/Mo</td>
+        <td>5000 GB/Mo</td>
+        <td>20000 GB/Mo</td>
+      </tr>
+     <tr>
+      <th>Site pages</th>
+      <td>
+        <form class="form">
+          <label> weather
+            <input type="text" id="weather">
+          </label>
+         
+      </form>
+    </td>
+      <td>50</td>
+      <td>500</td>
+     </tr>
+     
+  </table>
+  
+    <table class="td">
+      <tr >
+        <td > 
+
+        </td>
+      </tr>
+    </table>
+    
+  <script src="../javascript/oop.js"></script>  
+   
+
+</body>
+</html>

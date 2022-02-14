@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./a_todolist.js">
+    <link rel="stylesheet" href="">
+    <title>A to do list app</title>
+    <style>
+
+      /* CSS properties of the Parent container. */
+      /* */
+      *{margin: 0;
+      padding: 0;
+    }
+    body{box-sizing: border-box;
+        height: 100vh;}
+        article{
+background-color:#1C1C26;
+max-width:700px;
+margin:0 auto;
+padding:20px 3em;
+display: flex;
+ justify-content: center;
+ align-items: center;
+box-shadow: 3px -3px 4px  #6d6a6aab, -3px 3px  (255, 255, 255);
+ height: 100% !important;}
+
+            /* CSS properties of the second Parent */
+.todo_wrapper{
+box-sizing: border-box;
+font-family: monospace;
+background-image:linear-gradient(to left,#216e70, #082122);
+width: 320px;           
+padding-bottom: 20px;
+padding-top: 20px;
+border-radius: 7px;
+box-shadow: -3px 3px 6px  #6d6a6aab, 3pxrgb(255, 255, 255);
+                  } 
+        
+.todo_wrapper h1 
+{ position: relative;
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+
+ 
+
+}
+
+  /* animation rules  css property are set here */
+
+             @keyframes h1 {
+                from{transform: translateX(-80px); }
+                to{transform: translateX(85px);}
+              
+                } 
+               
+ .todo_wrapper h1 {
+ 
+position: relative;
+animation-name: h1;
+animation-duration: 4s;
+animation-fill-mode: both;
+animation-iteration-count: infinite;
+animation-direction: alternate;
+animation-timing-function: linear;
+} 
+            /* CSS Properties of A the Form Element  */
+#todo_form 
+{box-sizing: border-box;
+display: flex; 
+padding: 10px;
+justify-content:space-between;
+align-items: center; } 
+
+.search
+{
+box-sizing: border-box;
+width: 260px;
+padding: 0;
+margin: 10px  auto;
+margin-top: 15px;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 35px; 
+background-color: #fff;
+border-radius:  7px 7px 7px 7px ;
+  
+}
+
+.search input
+{
+  width: 75%;
+box-sizing: border-box;
+height: 100%;
+outline: none;
+margin: 0;
+border: none;
+border-radius:  7px 0 0 7px ;
+padding: 1px 15px;
+font-size: 14px;
+}
+
+.search input:focus
+{
+  outline: #f3d044;
+}
+
+.search button 
+{background-color: rgba(218, 212, 212, 0.5);
+  box-sizing: border-box;
+  width: 25%;
+  height: 100%;
+  border: none;
+  color: #216e70;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 5px 10px;
+  text-transform: uppercase;
+  border-radius: 0 7px  7px 0;
+}
+
+#todo_form  input:focus{ border:1px solid #c3883d; }
+#todo_form input{ 
+width: 70%;
+border-radius: 7px ; 
+padding: 7px 10px; 
+background-color:#e0e0e0e0; 
+outline:#c3883d;
+border-top: none;
+border: none;
+font-size: 90%; 
+height: 20px;
+text-align:left;
+box-shadow: #6d6a6ada 1px -1px 0px  rgb(255, 255, 255);
+text-transform:capitalize;}
+                      
+
+                  /* CSS properties of the the Button Element  */                          
+#todo_form  button{
+border-radius: 7px;
+ background-color: #f3d044;
+ border: none;
+ cursor: pointer;
+ color: #1C1C26;
+ outline:none;
+ padding: 3px 12px; 
+ font-size: 14px;
+ font-style: oblique; 
+transition: 0.5s ease-in-out;
+width:20%;}
+ #todo_form  button:hover 
+ {
+   background: #082122;
+   color: #f3d044;
+ }
+              /* CSS Properties of the unorederd list or list Div  */
+.listdiv{ 
+box-sizing: border-box;
+display: flex;
+flex-direction: column;
+align-items:center;
+justify-content:center;
+min-height: 150px;
+border: none;
+padding:5px 20px;
+font-family: monospace;
+      /* margin:10px 0 1px 0; 
+       padding:5px 10px ;
+     border-bottom: none;
+      border-right: none;
+      min-height: 150px; */
+} 
+
+/* css property controlled by Javascript array filter method */
+.listdiv .d-none {display:none;}
+         
+/* CSS properties for the list Items  are written bellow */
+   
+.listdiv li 
+{box-sizing: border-box; 
+
+display: flex;
+justify-content:space-between;
+align-items: center; 
+border-radius: 0 10px 10px 0;
+padding:6px;
+background-color:  #f3d044; 
+margin: 5px 10px;
+width: 100%;
+text-transform: capitalize;
+list-style: none; 
+font-size:medium;
+font-family: monospace; 
+font-weight: bold;
+border-bottom:1px solid;
+border-left:1px solid;
+color:rgba(0, 0, 0, 0.534);
+/* box-shadow:  1px 0px 0px  rgb(255, 255, 255),
+ -1px 0px  0px #6d6a6ada; */
+                 }
+
+            /* animation rules  css property are set here */
+
+            /* @keyframes drive{
+                from{transform: translateX(-100%); }
+                to{transform: translateX(5px);}
+              
+                } */
+               
+            /* .listdiv li:last-of-type{ 
+              position: relative;
+              animation: drive  1s linear ;} */
+                 
+              /* The trash can css property begins here */
+li .delete{
+max-width: 90%;
+outline: none;
+cursor: pointer;}
+         
+     li .trash img{ color: #ffff;
+                   margin-top:2px;}
+
+            
+    
+             
+            
+    </style>
+<body>
+
+   <article>
+       <div class="todo_wrapper">
+          <h1>Your Todo List</h1>
+          <form class="search">
+            <input type="text" placeholder="search here" id="search" autocomplete="off">
+            <button type="button"> <img src="./icons8-search-24.png" alt=""> </button>
+          </form>
+               
+           <div class="todo_span ">
+               <ul class="listdiv">
+                <li class="lisbon">
+                  take a bath and go to the gym
+                
+                 <img src="./icons8-trash-can-24.png"  alt="" class="delete">
+              
+                </li>
+                   <li class="eat">
+                    Attempt some coding projects
+                  
+                   <img src="./icons8-trash-can-24.png"  alt="" class="delete">
+                
+                  </li>
+                   <li class=" breakfast">
+                   go for an orchestra
+                  
+                   <img src="./icons8-trash-can-24.png"  alt="" class="delete">
+                
+                  </li>
+                  <li class="take">
+                 Put out the Trash 
+                   
+                    <img src="./icons8-trash-can-24.png"  alt="" class="delete">
+                 
+                   </li>
+                  <li class="emeka">
+                   do the Laundry
+                   
+                    <img src="./icons8-trash-can-24.png"  alt="" class="delete">
+                 
+                   </li>
+                
+                </ul>
+           </div>
+
+           <div class="todo_span">
+               
+            <form id="todo_form">
+             <input type="text" id="add_todo" autocomplete="off"     placeholder="Task To Be Done"> 
+                <button type="submit"> Add</button>
+            </form>
+           
+          
+         </div>
+       </div>
+   </article>
+  <script src="./a_todolist.js"></script>  
+</body>
+</html>

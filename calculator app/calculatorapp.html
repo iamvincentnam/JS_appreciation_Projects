@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="calculator.js">
+    <title>calculator app</title>
+    <style>
+
+        /* @import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300&family=Roboto:ital,wght@0,400;1,300;1,500&display=swap'); */
+/* the section bellow, contains styles for the layout of a youtube clone */
+        *{margin : 0; padding: 0;
+            box-sizing: border-box;
+            }
+        body{font-family: 'Roboto'; height: 100vh;}
+        header{display: flex; justify-content: space-between;
+                align-items: center;
+            background-color: darkorchid;
+            height: 60px;
+            padding: 15px;}
+        main{height:calc(100vh);
+             display: flex;
+             background: #f9f9f9;}
+
+        aside{height:100%; width:17%;
+            background: rgb(214, 211, 211);
+            overflow-y: hidden;}
+        @media screen and (max-width:768px) {
+           aside{display:none;} 
+        }
+ .sidebar-menu{ padding:0.5em 1em; 
+                margin-bottom: 1em;
+                box-sizing: border-box;
+                width:100%;
+            display: flex;
+            flex-direction: column;
+            margin-bottom:10px;
+            margin-top: 10px;
+            cursor: pointer;
+            
+       }
+    .nav-link{display: flex;
+            align-items: center;
+            padding:10px 20px;}
+ .sidebar-menu:hover{background-color:silver ;}
+  
+.sidebar-menu img{margin-right: 20px;}
+.sidebar-menu a{ text-decoration: none; color: rgb(39, 37, 37);
+                }
+
+                /* this section refers to styles for calculator  */
+                /* this section refers to styles for calculator  */
+                /* this section refers to styles for calculator  */
+hr{
+height: 1px;
+background-color: #e5e5e5;
+}
+
+article{ 
+    background-color:#1C1C26;
+    width: 100%;
+       }
+    
+.container{
+background-color: #1c2b38;
+width: 380px;
+margin:0 auto;
+padding:15px 15px 35px 20px;
+border-radius: 25px;
+height:auto;
+box-shadow: -1px 1px 1px 1px #4b4949da,  1px -1px  1px 1px #151e27;
+transform: scale(0.7);
+
+}
+
+
+ .form-item{
+/* position: relative; */
+display: flex; /*flex properties goes in pair with others
+ such as align items, justify content and flex direction*/
+align-items: flex-end;
+ /* items are alinged flex end because we want 
+we want it to be on the right side of the containner*/
+justify-content: space-around;
+/*items need to have space between them*/
+flex-direction: column;
+/*so that they align vertically instead of horizontally*/
+font-size: 1.7em;
+ word-wrap: break-word;
+ word-break: break-all;
+background-image: linear-gradient(to right, #281e16, #291f11, #664a25, #1b140c);
+ width: 100%;
+ height:80px;
+ border-bottom: 2px solid #58595a7e;        
+ box-sizing: border-box;
+ padding: 10px;
+ color: white;
+ margin-bottom: 10px;
+ box-shadow: 1px -2px 1px 1px   #707070da inset,
+-1px 2px  1px 1px inset rgba(95, 95, 95, 0.507);
+border-radius: 25px 0;
+ }
+
+  
+.input-display{
+ font-size: 90%;
+
+}
+.answer{
+ color: rgba(255, 255, 255, 0.404) !important;}
+
+   
+  
+    
+.wrapper
+{background-color: #1c2b38;
+width: 100%;
+color: rgb(207, 202, 202);
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+grid-auto-rows: 60px;
+grid-gap: 20px;
+padding:10px 20px;
+border-radius: 20px;
+  
+        
+        }
+        
+       
+.wrapper .item{
+    
+background-image:linear-gradient(to bottom, #1c2b#35414d ) ;
+box-shadow: 2px -2px 4px #6d6a6ada, -2px 2px  4px #06080a; 
+font-size: 2em;
+font-weight: normal;
+text-align: center;
+display: grid;
+place-items: center;
+border-radius: 6px;
+cursor: pointer;
+        }
+.item:hover{ color:rgba(207, 202, 202, 0.849);
+        background-image:linear-gradient(to bottom, #35414d, #1c2b38) ;}
+
+.item8 {
+ grid-row: 2/ span 3; grid-column: 4;
+    }
+.item19{
+font-size:1.5em !important; 
+}
+
+#metainfo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+#heading{
+line-height: 10px;
+color: white;
+font-family: 'slabo 27px', serif;
+text-shadow:0 0 2px rgba(255, 255, 255, 0.2) ;}
+
+.logo{
+font-family: 'Courier New', Courier, monospace;
+ margin: 0 0 5px 0;
+font-size: 24px;
+
+}
+.tagline{
+margin:0;
+font-size: 16px;
+}
+#sun-batttery-container{
+border-radius: 5px;
+ border-right: 1px solid rgba(245, 245, 245, .2);}
+                      
+                
+#sunbattery{   
+ width: 120px;
+ height: 30px;
+background: #3d2115;
+ border-radius: 3px;
+ display: flex;
+justify-content: center;
+align-items: center;
+font-size: 18px;
+color: #070300a2;
+font-weight: bold;
+    
+box-shadow: 0 -3px 4px -3px rgba(255, 9, 9, 0.2),
+ 4px 0 3px -4px rgba(255, 255, 255, .8),
+  0 2px 4px -2px rgba(0,0,0,0.5), 
+-3px 0 3px -1px rgba( 0,0,0,0.8),
+inset 0 -4px 3px -3px rgba( 0,0,0,0.5),
+inset 4px 0 4px -2px  rgba( 0,0,0,0.8) ;
+background-image: repeating-linear-gradient(to right, transparent,
+transparent, transparent 26px, 
+rgba(255,255,255, .1 )26px,
+rgba(255,255,255,.1)27px
+);  
+    
+}
+
+ .hour_span,
+.minute_span, 
+.seconds_span
+{    
+padding-right: 2px;
+margin-right: 2px;
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">
+
+  </div>
+</header>
+<main>
+    <aside>
+
+            <div class="sidebar-menu">
+                <a href="#" class="nav-link active">
+                    <img src="../images/svg icons/icons8-home-24.png" alt="">
+                    <span class="anchorname">Home</span>  
+                  </a>
+                
+             </div>
+<hr>
+             <div class="sidebar-menu">
+                <a href="#" class="nav-link active">
+                    <img src="../images/svg icons/icons8-compass-24.png">
+                    <span class="anchorname">Explore</span>
+                </a>
+             </div>
+
+                <div class="sidebar-menu">
+                <a href="#" class="nav-link active">
+                    <img src="../images/svg icons/icons8-play-24.png" alt="">
+                    <span class="anchorname">Subscriptions</span>  
+                  </a>
+
+                 </div>
+
+                  
+                <div class="sidebar-menu">
+                    <a href="#" class="nav-link active">
+                        <img src="../images/svg icons/icons8-music-time-24.png" alt="">
+                        <span class="anchorname">History</span>  
+                      </a>
+                </div>
+                  
+
+        
+
+
+                <div class="sidebar-menu">
+              <a href="#" class="nav-link active">
+                  <img src="../images/svg icons/icons8-circled-play-24.png" alt="">
+                  <span class="anchorname">Library</span>  
+                </a>
+                </div>
+                
+        
+            
+            <div class="sidebar-menu">
+                <a href="#" class="nav-link active">
+                    <img src="../images/svg icons/icons8-like-24.png" alt="">
+                    <span class="anchorname">Liked Videos</span>  
+                  </a>
+            </div> 
+    </aside>
+
+    <!-- the article is a whole wrapper element that contains the background which the calculator app sits in -->
+    <article>
+      
+       <!-- here, is the calculator app -->
+        <div class="container">
+            <div id="metainfo">
+                <div id="heading">
+                     <h1 class="logo">NAM</h1>
+
+                     <h2 class="tagline">001</h2>
+                </div>
+                <div id="sun-batttery-container">
+                     <div id="sunbattery">
+                        
+                        </div>
+                 </div>
+
+            </div>
+            <!-- Here contains  div for display inside the calculator-->
+            <div class="form-item">
+                  <div class="input-display"></div> 
+                  <div class="answer">
+                     
+                  </div>
+            </div>
+
+            <!-- the wrapper contains individual divs which are input buttons of the calculator-->
+          <div class="wrapper" id="wrapper">
+                
+             <div class="item Oprtors item1"> +  </div>
+             <div class="item Oprtors item2"> - </div>
+             <div class="item Oprtors item3">  * </div>
+             <div class="item Oprtors item4">&#247</div>
+             <div class="item nums item5"> 7 </div>
+             <div class="item nums item6"> 8 </div>
+             <div class="item nums item7"> 9 </div>
+             <div class="item  item8"> = </div>
+             <div class="item nums item9"> 4 </div>
+             <div class="item nums item10"> 5</div>
+             <div class="item nums item11">6 </div>
+             <div class="item nums item12"> 1</div>
+             <div class="item nums item13">2 </div>
+             <div class="item nums item14">3</div>
+             <div class="item nums item15">0 </div>
+             <div class="item nums item17"> .</div>
+             <div class="item clearbtn item18">AC </div>
+             <div class="item del item19">DEL </div>       
+                   
+            </div>
+            
+           
+    
+        </div>
+       
+    </article>
+</main>
+    
+    <script src="calculator.js"> 
+
+    </script>
+</body>
+</html>
