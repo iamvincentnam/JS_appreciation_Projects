@@ -49,7 +49,7 @@ function switchfunc(input){
                   }
         /*adding the break statement would make the equal sign not to display after an evaluation is made */
             break;
-            
+           
          default:
         case input :
             display.innerText += input;
