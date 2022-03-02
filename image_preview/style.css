@@ -1,0 +1,69 @@
+body{background-color:rgb(20, 22, 58); }
+
+article
+{
+ width: 650px;
+margin:20px auto;
+height: 750px;
+box-sizing: border-box;
+background: rgb(12, 13, 48);;
+padding: 10px;
+box-shadow: 6px 6px 10px rgba(23, 24, 58, 0.781), 6px 6px 10px #ccc;
+transform: scale(0.9);
+}
+
+article h1
+{
+color: aliceblue;
+text-align: center;
+text-transform: capitalize;
+font-weight: normal;
+font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+letter-spacing: 2px;
+margin-bottom: 1em;
+}
+ .image_viewr
+        {
+box-sizing: border-box;
+width:100%; 
+height:60%;
+border:none;}
+        
+.image_viewr img
+{width: 100%; 
+height: 100%;}
+
+.thumbnails
+{width: 100%; 
+box-sizing: border-box;
+height:auto; 
+border: 2px solid rgb(255, 255, 255);
+background: rgba(255, 255, 255, 0.815);
+ /* border-radius: 5px;  */
+ display: grid;
+ grid-template-columns: repeat(4,1fr);
+ grid-auto-rows:100px;
+ cursor: pointer;
+ grid-gap: 3px;
+padding: 2px;
+}
+
+/* An animation effect CSS rule for the entrance of a preview (large) image */
+@keyframes fade_in
+{
+ to{opacity:1;}   
+}
+
+ .entrance_animation 
+ {
+opacity: 0;
+animation:fade_in 0.5s ease-in 1 forwards;
+}   
+
+.imgs img
+{width: 100%;
+height: 100%;
+transition: 0.2s linear;
+}
+
+ 
